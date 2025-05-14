@@ -2,17 +2,18 @@ DROP DATABASE IF EXISTS Consultas;
 CREATE DATABASE Consultas;
 USE Consultas;
 
-CREATE TABLE Fabricantes (
-	CODIGO tinyint primary key auto_increment,
-    NOMBRE varchar(19)
+CREATE TABLE fabricante (
+	codigo int(10) primary key auto_increment,
+    nombre varchar (100)
 );
-CREATE TABLE Productos (
-	ID_Producto tinyint primary key auto_increment,
-    NomProducto varchar(20),
-    Valor double,
-    ID_Fabricante tinyint
+CREATE TABLE producto (
+	codigo int(10) primary key auto_increment,
+    nombre varchar(100),
+    precio double,
+    codigo_fabricante int(10)
 );    
    
-ALTER TABLE Productos
-ADD CONSTRAINT FK_Productos_Fabricante
-FOREIGN KEY (ID_Fabricante) REFERENCES Fabricantes (ID_Fabricante);
+ALTER TABLE producto
+ADD CONSTRAINT FK_productos_fabricante
+FOREIGN KEY (codigo_fabricante) REFERENCES fabricante (codigo);
+
