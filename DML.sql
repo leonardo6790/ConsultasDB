@@ -43,10 +43,14 @@ SELECT UPPER(nombre), precio From producto;
 SELECT LOWER(nombre), precio FROM producto;
 
 #8. Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante. 
-SELECT UPPER(nombre), precio From producto;
+SELECT nombre, UPPER(LEFT(nombre,2)) as MAYUSUCULAS From producto;
 
 #9. Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio. 
+SELECT nombre,precio, round(precio,0) as PrecioRedondeado from producto;
+
 #10. Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal. 
+
+
 #11. Lista el identificador de los fabricantes que tienen productos en la tabla producto. 
 #12. Lista el identificador de los fabricantes que tienen productos en la tabla producto, eliminando los identificadores que aparecen repetidos. 
 #13. Lista los nombres de los fabricantes ordenados de forma ascendente. 
