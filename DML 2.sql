@@ -72,5 +72,14 @@ JOIN fabricante as fab
 ON  p.codigo_fabricante = fab.codigo
 WHERE fab.nombre LIKE '%w%';
 #12. Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente)
-
+SELECT  p.nombre, p.precio, fab.nombre
+FROM producto as p
+JOIN fabricante as fab 
+ON  p.codigo_fabricante = fab.codigo
+WHERE p.precio >= 180;
 #13. Devuelve un listado con el identificador y el nombre de fabricante, solamente de aquellos fabricantes que tienen productos asociados en la base de datos.
+SELECT DISTINCT fab.codigo, fab.nombre
+FROM fabricante as fab
+JOIN  producto as p
+ON fab.codigo = p.codigo_fabricante
+

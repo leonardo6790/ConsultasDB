@@ -49,7 +49,7 @@ SELECT nombre, UPPER(LEFT(nombre,2)) as MAYUSUCULAS From producto;
 SELECT nombre,precio, round(precio,0) as PrecioRedondeado from producto;
 
 #10. Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal. 
-
+SELECT nombre,precio, round(precio,0)-1 as PrecioRedondeado from producto;
 
 #11. Lista el identificador de los fabricantes que tienen productos en la tabla producto. 
 SELECT codigo_fabricante as identificador FROM producto;
